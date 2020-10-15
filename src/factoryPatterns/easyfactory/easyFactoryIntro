@@ -1,0 +1,24 @@
+简单工厂：
+
+首先创建一个公用接口 ： 参考ICar
+
+使用类去实现公用接口 : 参考Audi & Benz
+
+创建工厂类创建实例 : 参考CarFactory
+
+通过CarFactory创建实例 ： 参考FactoryDemo
+
+简单工厂模式的优点：
+工厂类中包含了必要的逻辑判断，根据客户端传入的参数，动态实例化相关的类，对客户端来说，去除了对具体产品的依赖。
+
+缺点：添加新的功能时，除了添加产品类外，需要修改工厂类，违反了开闭原则。
+
+传统的工厂实现每增加一种类型就需要多增加一个类并且改造工厂类违反了（开闭原则），这是它的缺点，在此问题上对工厂改造
+改造后的工厂类参考CarFactory2，根据实体类的class类型来生成实例，这样就可以不用改造工厂类了
+
+
+1.6JDK中的简单工厂模式
+在开发中我们通过Calendar.getInstance()获取日历对象进行一些时间的处理，Calendar类是抽象类，
+在这里既作为做工厂类（creator）提供静态方法getInstance获取不同的日历实现，
+也作为抽象产品（Product）描述所有实例的公共行为，GregorianCalendar，JapaneseImperialCalendar，BuddhistCalendar
+作为Calendar的具体实现，充当具体产品（Concrete Product）的角色。

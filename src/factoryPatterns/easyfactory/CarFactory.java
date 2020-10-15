@@ -1,4 +1,4 @@
-package factoryPatterns;
+package factoryPatterns.easyfactory;
 
 /**
  * @author hejiawei
